@@ -13,6 +13,9 @@ namespace MyWordBlog.DAL.Entidades
         [MaxLength(250, ErrorMessage = "El campo {0} debe tener máximo {1} caracteres.")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public string Password { get; set; }
+
+        [Display(Name = "UsuarioRegistrado")]
+        public ICollection<UserRegistred> UsersRegistred { get; set; }
     }
 }
 

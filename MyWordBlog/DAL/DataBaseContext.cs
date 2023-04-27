@@ -21,7 +21,10 @@ namespace MyWordBlog.DAL
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Post>().HasIndex(c => c.Title).IsUnique();
-            
+            modelBuilder.Entity<UserRegistred>().HasIndex("UserLogin", "UserLoginId").IsUnique();
+            modelBuilder.Entity<Comentary>().HasIndex("UserRegistred", "UserRegistredId").IsUnique();
+            modelBuilder.Entity<Comentary>().HasIndex("Post", "PostId").IsUnique();
+            modelBuilder.Entity<Post>().HasIndex("UserRegistred", "UserRegistredId").IsUnique();
         }
     }
 }

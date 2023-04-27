@@ -21,5 +21,15 @@ namespace MyWordBlog.DAL.Entidades
         [MaxLength(50, ErrorMessage = "El campo {0} debe tener máximo {1} caracteres.")]
         public int? Rol { get; set; }
 
+        [Display(Name = "UsuarioLogin")]
+        public UserLogin UserLogin { get; set; }
+
+        [Required]
+        public Guid UserLoginId { get; set; }
+
+        public ICollection<Post> Posts { get; set; }
+        public ICollection<Comentary> Comentaries { get; set; }
+
+
     }
 }
