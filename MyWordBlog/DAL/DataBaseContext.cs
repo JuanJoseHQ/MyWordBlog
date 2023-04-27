@@ -11,6 +11,11 @@ namespace MyWordBlog.DAL
         }
 
         public DbSet<Comentary> Comentaries { get; set; }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<UserAdmin> UsersAdmin { get; set; }
+        public DbSet<UserCommon> UsersCommon { get; set; }
+        public DbSet<UserLogin> UsersLogin { get; set; }
+        public DbSet<UserRegistred> UsersRegistred { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
