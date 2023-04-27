@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyWordBlog.DAL;
 
@@ -11,9 +12,11 @@ using MyWordBlog.DAL;
 namespace MyWordBlog.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    partial class DataBaseContextModelSnapshot : ModelSnapshot
+    [Migration("20230427224503_Soltution")]
+    partial class Soltution
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -132,18 +135,12 @@ namespace MyWordBlog.Migrations
                 {
                     b.HasBaseType("MyWordBlog.DAL.Entidades.UserRegistred");
 
-                    b.Property<DateTime?>("Salary")
-                        .HasColumnType("datetime2");
-
                     b.HasDiscriminator().HasValue("UserAdmin");
                 });
 
             modelBuilder.Entity("MyWordBlog.DAL.Entidades.UserCommon", b =>
                 {
                     b.HasBaseType("MyWordBlog.DAL.Entidades.UserRegistred");
-
-                    b.Property<DateTime?>("DateRegistred")
-                        .HasColumnType("datetime2");
 
                     b.HasDiscriminator().HasValue("UserCommon");
                 });
