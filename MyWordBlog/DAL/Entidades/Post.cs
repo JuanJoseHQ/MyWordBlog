@@ -17,12 +17,6 @@ namespace MyWordBlog.DAL.Entidades
         public int? CantLikes { get; set; }
         public int? CantDisLikes { get; set; }
 
-        
-
-        public UserRegistred UserRegistred { get; set; }
-
-        [Required]
-        public Guid UserRegistredId { get; set; }
 
         public ICollection<Comentary> Comentaries { get; set; }
     }

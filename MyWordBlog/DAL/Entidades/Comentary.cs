@@ -11,15 +11,9 @@ namespace MyWordBlog.DAL.Entidades
         public string Description { get; set; }
         public DateTime? DatePublication { get; set; }
 
-        [NotMapped]
         public Post Post { get; set; }
 
-        [Required]
         public Guid PostId { get; set; }
 
-        public UserRegistred UserRegistred { get; set; }
-
-        [Required]
-        public Guid UserRegistredId { get; set; }
     }
 }
