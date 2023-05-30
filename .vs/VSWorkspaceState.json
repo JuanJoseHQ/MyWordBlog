@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MyWordBlog",
+    "\\MyWordBlog\\DAL\\Entidades"
   ],
+  "SelectedNode": "\\MyWordBlog\\Migrations",
   "PreviewInSolutionExplorer": false
 }
