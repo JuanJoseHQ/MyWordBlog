@@ -11,10 +11,10 @@ namespace MyWordBlog.DAL.Entidades
 
         [MaxLength(3000, ErrorMessage = "El campo {0} debe tener máximo {1} caracteres.")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        public string Desctipton { get; set; }
+        public string Description { get; set; }
         public string? Author { get; set; }
-        public int? CantLikes { get; set; }
-        public int? CantDisLikes { get; set; }
+        public int? CountLikes { get; set; }
+        public int? CountDisLikes { get; set; }
 
 
         public ICollection<Comentary> Comentaries { get; set; }
