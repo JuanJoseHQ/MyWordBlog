@@ -5,7 +5,7 @@ namespace MyWordBlog.DAL.Entidades
 {
     public class Post : Entity
     {
-        [MaxLength(100, ErrorMessage = "El campo {0} debe tener máximo {1} caracteres.")]
+        [MaxLength(100, ErrorMessage = "El campo {0} debe tener máximo {100} caracteres.")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public string Title { get; set; }
 
@@ -17,9 +17,6 @@ namespace MyWordBlog.DAL.Entidades
         public int? CountLikes { get; set; }
         public int? CountDisLikes { get; set; }
 
-        
-
-
-        public ICollection<Commentary> Commentaries { get; set; }
+        public ICollection<Commentary>? Commentaries { get; set; }
     }
 }

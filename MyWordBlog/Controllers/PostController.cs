@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyWordBlog.DAL;
-using MyWordBlog.DAL.Entities;
+using MyWordBlog.DAL.Entidades;
 
 namespace MyWordBlog.Controllers
 {
