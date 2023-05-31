@@ -17,6 +17,8 @@ namespace MyWordBlog.DAL.Entidades
         public int? CountLikes { get; set; }
         public int? CountDisLikes { get; set; }
 
+        
+
 
         public ICollection<Commentary> Commentaries { get; set; }
     }
