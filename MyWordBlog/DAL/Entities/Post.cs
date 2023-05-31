@@ -13,10 +13,11 @@ namespace MyWordBlog.DAL.Entidades
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public string Description { get; set; }
         public string? Author { get; set; }
+      
         public int? CountLikes { get; set; }
         public int? CountDisLikes { get; set; }
 
 
-        public ICollection<Comentary> Comentaries { get; set; }
+        public ICollection<Commentary> Commentaries { get; set; }
     }
 }

@@ -10,13 +10,16 @@ namespace MyWordBlog.DAL
         {
         }
 
-        public DbSet<Comentary> Comentaries { get; set; }
+        public DbSet<Commentary> Commentaries { get; set; }
         public DbSet<Post> Posts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Post>().HasIndex(c => c.Title).IsUnique();
+
+            modelBuilder.Entity<Commentary>().HasIndex(c => c.Id).IsUnique();
+            
 
         }
     }

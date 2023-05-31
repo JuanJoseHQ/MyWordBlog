@@ -12,8 +12,8 @@ using MyWordBlog.DAL;
 namespace MyWordBlog.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    [Migration("20230524100314_UpdateEntities")]
-    partial class UpdateEntities
+    [Migration("20230531021213_EntitiesCommentaryAndPost")]
+    partial class EntitiesCommentaryAndPost
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace MyWordBlog.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("MyWordBlog.DAL.Entidades.Comentary", b =>
+            modelBuilder.Entity("MyWordBlog.DAL.Entidades.Commentary", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -34,22 +34,28 @@ namespace MyWordBlog.Migrations
                     b.Property<string>("Author")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("DatePublication")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<Guid>("PostId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<DateTime?>("PublicationDate")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("Id")
+                        .IsUnique();
 
                     b.HasIndex("PostId");
 
-                    b.ToTable("Comentaries");
+                    b.ToTable("Commentaries");
                 });
 
             modelBuilder.Entity("MyWordBlog.DAL.Entidades.Post", b =>
@@ -61,16 +67,22 @@ namespace MyWordBlog.Migrations
                     b.Property<string>("Author")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("CantDisLikes")
+                    b.Property<int?>("CountDisLikes")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CantLikes")
+                    b.Property<int?>("CountLikes")
                         .HasColumnType("int");
 
-                    b.Property<string>("Desctipton")
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(3000)
                         .HasColumnType("nvarchar(3000)");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("PublicationDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -85,10 +97,10 @@ namespace MyWordBlog.Migrations
                     b.ToTable("Posts");
                 });
 
-            modelBuilder.Entity("MyWordBlog.DAL.Entidades.Comentary", b =>
+            modelBuilder.Entity("MyWordBlog.DAL.Entidades.Commentary", b =>
                 {
                     b.HasOne("MyWordBlog.DAL.Entidades.Post", "Post")
-                        .WithMany("Comentaries")
+                        .WithMany("Commentaries")
                         .HasForeignKey("PostId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -98,7 +110,7 @@ namespace MyWordBlog.Migrations
 
             modelBuilder.Entity("MyWordBlog.DAL.Entidades.Post", b =>
                 {
-                    b.Navigation("Comentaries");
+                    b.Navigation("Commentaries");
                 });
 #pragma warning restore 612, 618
         }
