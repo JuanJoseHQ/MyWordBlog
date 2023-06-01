@@ -18,7 +18,7 @@ namespace MyWordBlog.Controllers
         }
 
         [HttpGet, ActionName("Get")]
-        [Route("Get")]
+        [Route("GetPostById")]
         public IActionResult GetPost(Guid id)
         {
             var post = _context.Posts.FirstOrDefault(p => p.Id == id);
@@ -29,7 +29,7 @@ namespace MyWordBlog.Controllers
             return Ok(post);
         }
         [HttpPut, ActionName("Update")]
-        [Route("Update")]
+        [Route("UpdatePost")]
         public async Task<IActionResult> UpdatePost(Guid id, Post updatedPost)
         {
             var post = _context.Posts.FirstOrDefault(p => p.Id == id);
@@ -86,7 +86,7 @@ namespace MyWordBlog.Controllers
            
             }
         [HttpDelete, ActionName("Delete")]
-        [Route("Delete")]
+        [Route("DeletePost")]
         public async Task<IActionResult> DeletePost(Guid id)
         {
             var post = _context.Posts.FirstOrDefault(p => p.Id == id);

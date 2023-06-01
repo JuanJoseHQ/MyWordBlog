@@ -10,7 +10,7 @@ namespace MyWordBlog.DAL
         {
         }
 
-        public DbSet<Commentary> Commentaries { get; set; }
+        public DbSet<Commentary> Commentary { get; set; }
         public DbSet<Post> Posts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
