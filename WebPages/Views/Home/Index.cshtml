@@ -2,7 +2,94 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyWorldBlog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #1DA1F2; /* Color azul estilo Twitter */
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .students {
+            display: flex;
+            justify-content: center;
+        }
+
+        .student-card {
+            width: 300px;
+            background-color: #F5F8FA; /* Color de fondo */
+            border-radius: 5px;
+            padding: 10px;
+            margin: 0 10px;
+        }
+
+        .student-name {
+            font-weight: bold;
+        }
+
+        .student-info {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MyWorldBlog</h1>
+        <p>This is a web project created by students for the subject of web applications and services. 
+            The website is called MyWorldBlog and it is a small social network where people can share their opinions
+            on various topics through posts. Additionally, other users can interact with these posts by leaving comments 
+            or liking/disliking the publication. Here are the students responsible for the project.</p>
+
+        <div class="students">
+            <div class="student-card">
+                <div class="student-name">Estudiante 1</div>
+                <div class="student-info">
+                    Carnet: 21158175<br>
+                    Correo: JuanHerrera310670correo.itm.edu.co<br>
+                    Nombre: Juan José Herrera Quinchía <br>
+                    Git: JuanJoseHQ / https://github.com/JuanJoseHQ
+                </div>
+            </div>
+
+            <div class="student-card">
+                <div class="student-name">Estudiante 2</div>
+                <div class="student-info">
+                    Carnet: 67890<br>
+                    Correo: estudiante2@example.com<br>
+                    Nombre: estudiante1@example.com<br>
+                    Git: JuanJoseHQ / https://github.com/JuanJoseHQ
+                </div>
+            </div>
+
+            <div class="student-card">
+                <div class="student-name">Estudiante 3</div>
+                <div class="student-info">
+                    Carnet: 54321<br>
+                    Correo: estudiante3@example.com<br>
+                    Nombre: estudiante1@example.com<br>
+                    Git: JuanJoseHQ / https://github.com/JuanJoseHQ
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
