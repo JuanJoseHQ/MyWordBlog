@@ -64,11 +64,12 @@ namespace MyWordBlog.Controllers
             var comment = _context.Commentary.FirstOrDefault(c => c.Id == id);
             if (comment == null)
             {
-                return NotFound();
+                return NotFound("No se ha encontrado el Comentario");
             }
-            _context.Commentary.Remove(comment);
+            
             try
             {
+                _context.Commentary.Remove(comment);
                 await _context.SaveChangesAsync();
                 return Ok("Comentario eliminado correctamente");
             }
