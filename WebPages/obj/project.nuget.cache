@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "NG8cH5y0rSJraG/LaeNO4ti/Xi03jqXfjMOb4t2b07HiZOi5zL4EyeG2Q8jDiO13XfrqTGYaKNhaJFbtL42scw==",
+  "dgSpecHash": "Br1A5pwh2vX+qs/Gwkk4SqUtPGShVqs9kq0uxd3HufncBfFZ7+AJ8YcFHzOv3Ik+l6XxwqLLQCr5IVUGa44boA==",
   "success": true,
   "projectFilePath": "C:\\Users\\USUARIO\\Desktop\\Aplicaciones Webs\\MyWordBlog\\WebPages\\WebPages.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\USUARIO\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

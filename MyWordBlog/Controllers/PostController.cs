@@ -18,7 +18,7 @@ namespace MyWordBlog.Controllers
         }
 
         [HttpGet, ActionName("Get")]
-        [Route("GetPostById")]
+        [Route("GetPostById/{PostId}")]
         public IActionResult GetPost(Guid id)
         {
             var post = _context.Posts.FirstOrDefault(p => p.Id == id);

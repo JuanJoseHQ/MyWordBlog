@@ -20,7 +20,7 @@ namespace MyWordBlog.Controllers
         }
 
         [HttpPost, ActionName("Create")]
-        [Route("CreateComment")]
+        [Route("CreateComment/{PostId}")]
         public async Task<IActionResult> CreateComment(Commentary comment, Guid postId, String description, String Author)
         { 
             try
@@ -32,20 +32,21 @@ namespace MyWordBlog.Controllers
                 comment.Description = description;
                 comment.ModifiedDate = null;
                 comment.PublicationDate = DateTime.Now;
-                _context.Commentary.Add(comment);
+                _context.Commentaries.Add(comment);
                 await _context.SaveChangesAsync();
 
                 return Ok("Comentario realizado correctamente"); 
               
             }
-            catch (DbUpdateException)
+            catch (DbUpdateException ep)
             {
                 // Manejar cualquier error de base de datos
-                return StatusCode(500, "Error al guardar el comentario en la base de datos");
+                return StatusCode(500, "Error al guardar el comentario en la base de datos" + ep);
             }
         }
+
         [HttpGet, ActionName("Get")]
-        [Route("Get")]
+        [Route("Get/{PostId}")]
         public IActionResult GetComment(Guid id)
         {
             var comment = _context.Posts.FirstOrDefault(c => c.Id == id);
@@ -61,7 +62,7 @@ namespace MyWordBlog.Controllers
         [Route("DeleteComment")]
         public async Task<IActionResult> DeleteComment(Guid id)
         {
-            var comment = _context.Commentary.FirstOrDefault(c => c.Id == id);
+            var comment = _context.Commentaries.FirstOrDefault(c => c.Id == id);
             if (comment == null)
             {
                 return NotFound("No se ha encontrado el Comentario");
@@ -69,7 +70,7 @@ namespace MyWordBlog.Controllers
             
             try
             {
-                _context.Commentary.Remove(comment);
+                _context.Commentaries.Remove(comment);
                 await _context.SaveChangesAsync();
                 return Ok("Comentario eliminado correctamente");
             }
@@ -83,7 +84,7 @@ namespace MyWordBlog.Controllers
         [Route("UpdateComment")]
         public async Task<IActionResult> UpdateComment(Guid id, Commentary updatedcomment)
         {
-            var comment = _context.Commentary.FirstOrDefault(c => c.Id == id);
+            var comment = _context.Commentaries.FirstOrDefault(c => c.Id == id);
             if (comment == null)
             {
                 return NotFound();

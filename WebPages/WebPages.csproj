@@ -6,4 +6,14 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Include="..\MyWordBlog\DAL\Entities\Commentary.cs" Link="Models\Commentary.cs" />
+    <Compile Include="..\MyWordBlog\DAL\Entities\Entity.cs" Link="Models\Entity.cs" />
+    <Compile Include="..\MyWordBlog\DAL\Entities\Post.cs" Link="Models\Post.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
 </Project>

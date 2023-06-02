@@ -29,3 +29,5 @@ C:\Users\USUARIO\Desktop\Aplicaciones Webs\MyWordBlog\WebPages\obj\Debug\net6.0\
 C:\Users\USUARIO\Desktop\Aplicaciones Webs\MyWordBlog\WebPages\obj\Debug\net6.0\WebPages.pdb
 C:\Users\USUARIO\Desktop\Aplicaciones Webs\MyWordBlog\WebPages\obj\Debug\net6.0\WebPages.genruntimeconfig.cache
 C:\Users\USUARIO\Desktop\Aplicaciones Webs\MyWordBlog\WebPages\obj\Debug\net6.0\ref\WebPages.dll
+C:\Users\USUARIO\Desktop\Aplicaciones Webs\MyWordBlog\WebPages\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\USUARIO\Desktop\Aplicaciones Webs\MyWordBlog\WebPages\obj\Debug\net6.0\WebPages.csproj.CopyComplete
